@@ -1,0 +1,38 @@
+.header {
+  padding: 0 1rem;
+
+  height: 60px;
+  min-height: 60px;
+  background: #273c75;
+  /* background: linear-gradient(to right, #0ed461 85%, #0ed4ba 100%);
+  background: -moz-linear-gradient(to right, #0ed461 85%, #0ed4ba 100%);
+  background: -webkit-linear-gradient(to right, #0ed461 85%, #0ed461 100%); */
+
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-item {
+  padding: 10px 20px;
+
+  font-family: Ubuntu;
+  font-size: .9rem;
+  color: #f5f6fa;
+  text-decoration: none;
+  
+  align-self: center;
+}
+
+.nav-item.active,
+.nav-item.right.active {
+  background: white;
+  border-radius: 4px;
+
+  font-weight: bold;
+  color: #e1b12c;
+}
+
+.nav-item.right {
+  margin-left: auto;
+  color: #f5f6fa;
+}

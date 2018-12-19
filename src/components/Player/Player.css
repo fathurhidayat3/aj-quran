@@ -1,0 +1,70 @@
+.Player {
+  height: 70px;
+  min-height: 70px;
+  max-height: 70px;
+
+  padding: 0 1.2rem;
+
+  background: #dcdde1;
+
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.Input-circle-button {
+  height: 30px;
+  width: 30px;
+
+  background: #44bd32;
+  border-style: solid;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 0 #939397;
+
+  font-size: .7rem;
+  color: white;
+  vertical-align: middle;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+.Input-form-group {
+  display: flex;
+
+  align-items: center;
+
+  font-family: 'Open Sans';
+}
+
+.Input-form-group *:focus {
+  outline-color: transparent;
+}
+.Input-form-group *:active {
+  outline-color: #e1b12c;
+}
+
+.Input-form-group.right {
+  margin-left: auto;
+}
+
+.Input-form-group label {
+  margin-right: 8px;
+
+  font-size: .8rem;
+  color: #273c75;
+}
+
+.Input-form-group select {
+  padding: 4px 8px;
+
+  height: 30px;
+  min-width: 200px;
+
+  background: white;
+  border: none;
+  border-radius: 4px;
+
+  font-size: .9rem;
+}

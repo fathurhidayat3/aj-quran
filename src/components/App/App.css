@@ -1,0 +1,34 @@
+.App-wrapper {
+  display: flex;
+
+  flex-grow: 1;
+}
+
+.App-left-sidebar {
+  height: calc(100vh - 60px);
+  width: 400px;
+  min-width: 400px;
+  max-width: 400px;
+
+  background: #f5f6fa;
+
+  overflow-y: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.App-right-sidebar {
+  flex-grow: 1;
+}
+
+.App-surats {
+  padding: 1rem;
+  
+  /* height: calc(100vh - 160px); */
+  min-height: calc(100vh - 160px);
+
+  flex-grow: 1;
+
+  overflow-y: auto;
+}

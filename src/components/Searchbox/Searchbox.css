@@ -1,0 +1,32 @@
+.Searchbox {
+  height: 70px;
+  min-height: 70px;
+  max-height: 70px;
+
+  padding: 0 1rem;
+
+  background: #273c75;
+
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.Searchbox input {
+  padding: 0 20px;
+
+  height: 30px;
+  width: 100%;
+
+  border: none;
+  border-radius: 30px;
+  box-shadow: inset 0 0 5px 1px #939397;
+
+  font-size: .9rem;
+}
+.Searchbox input:focus {
+  outline: none;
+}
+.Searchbox input::placeholder {
+  color: #939397;
+}

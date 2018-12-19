@@ -1,0 +1,66 @@
+.Card {
+  padding: 1rem;
+
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 7px 0 #dcdde1;
+
+  display: flex;
+  flex-direction: column;
+
+  text-decoration: none;
+
+  /* cursor: pointer; */
+}
+.Card:not(:last-child) {
+  margin-bottom: 13px;
+}
+
+.Card-title {
+  margin-bottom: 10px;
+
+  font-family: Ubuntu;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #2f3640;
+}
+.Card-title-helper {
+  font-weight: normal;
+  color: #dcdde1;
+}
+.Card-title-right {
+  font-size: 1.2rem;
+  font-family: 'Harmattan';
+  font-weight: normal;
+  color: #44bd32;
+  line-height: 1.2rem;
+
+  float: right;
+}
+
+.Card-footer {
+  font-family: Ubuntu;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.Card.active {
+  background: #273c75;
+  /* background: linear-gradient(to bottom, #0097e6 75%, #192a56 100%);
+  background: -moz-linear-gradient(to bottom, #0097e6 75%, #192a56 100%);
+  background: -webkit-linear-gradient(to bottom, #0097e6 75%, #192a56 100%); */
+}
+
+.Card.active .Card-title {
+  color: white;
+}
+.Card.active .Card-title-helper {
+  color: #f1f1f1;
+}
+.Card.active .Card-title-right {
+  color: #fbc531;
+}
+
+.Card.active .Card-footer {
+  color: #e1b12c;
+}
