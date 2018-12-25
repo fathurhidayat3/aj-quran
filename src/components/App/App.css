@@ -22,9 +22,36 @@
   flex-grow: 1;
 }
 
+.App-search-header {
+  height: 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  font-family: "Open Sans";
+}
+.App-search-header span {
+  font-size: 0.7rem;
+  color: #44bd32;
+  
+}
+.App-search-header button {
+  padding: 5px 0;
+
+  background: transparent;
+  border: none;
+  border-radius: 3px;
+
+  font-size: 0.65rem;
+  color: #999;
+
+  cursor: pointer;
+}
+
 .App-surats {
   padding: 1rem;
-  
+
   /* height: calc(100vh - 160px); */
   min-height: calc(100vh - 160px);
 

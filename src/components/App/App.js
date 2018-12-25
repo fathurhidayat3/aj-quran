@@ -16,8 +16,10 @@ class App extends Component {
 
     this.state = {
       surats: [],
+      suratsCopy: [],
       selectedNumber: 1,
-      suratsLoaded: false
+      suratsLoaded: false,
+      search: false
     };
   }
 
@@ -38,6 +40,7 @@ class App extends Component {
       .then(result => {
         this.setState({
           surats: result.data.data,
+          suratsCopy: result.data.data,
           suratsLoaded: true
         });
       });
@@ -49,25 +52,90 @@ class App extends Component {
     });
   };
 
+  onSearchSubmit = keyword => {
+    this.setState({
+      suratsLoaded: false
+    });
+
+    axios
+      .get(
+        `${"https://cors-anywhere.herokuapp.com/"}http://api.alquran.cloud/search/${keyword}/all/id.indonesian`,
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "*"
+          }
+        }
+      )
+      .then(result => {
+        if (typeof result.data.data != "undefined") {
+          this.setState({
+            surats: result.data.data.matches,
+            suratsLoaded: true,
+            search: true
+          });
+        } else {
+          alert("Ma'af hasil tidak ditemukan");
+
+          this.setState({
+            surats: this.state.suratsCopy,
+            suratsLoaded: true,
+            search: false
+          });
+        }
+      });
+  };
+
+  resetSearch = () => {
+    this.setState({
+      surats: this.state.suratsCopy,
+      suratsLoaded: true,
+      search: false
+    });
+  }
+
   render() {
     return (
       <div className="App-wrapper">
         <div className="App-left-sidebar">
+          <Searchbox onSearchSubmit={this.onSearchSubmit} />
+
           <div className="App-surats">
             {!this.state.suratsLoaded ? (
               <Loader loading={true} className="centered" />
             ) : (
-              this.state.surats.map(surat => (
-                <Card
-                  key={surat.number}
-                  surat={surat}
-                  onCardClick={this.onCardClick}
-                />
-              ))
+              <div>
+                {this.state.search && (
+                  <div className="App-search-header">
+                    <span>Hasil pencarian : <b>{this.state.surats.length}</b></span>
+                    <button onClick={this.resetSearch}>Reset pencarian</button>
+                  </div>
+                )}
+                {this.state.surats.map((surat, index) =>
+                  !this.state.search ? (
+                    <Card
+                      key={index}
+                      link={surat.number}
+                      title={surat.englishName}
+                      titleHelper={surat.revelationType}
+                      titleRight={surat.name}
+                      body={`${surat.numberOfAyahs} ayat`}
+                      onCardClick={this.onCardClick}
+                    />
+                  ) : (
+                    <Card
+                      key={index}
+                      link={surat.surah.number}
+                      hashId={surat.numberInSurah}
+                      title={surat.surah.englishName}
+                      titleRight={`ayat ke-${surat.numberInSurah}`}
+                      body={surat.text}
+                      onCardClick={this.onCardClick}
+                    />
+                  )
+                )}
+              </div>
             )}
           </div>
-
-          {/* <Searchbox /> */}
         </div>
         <div className="App-right-sidebar">
           <Content

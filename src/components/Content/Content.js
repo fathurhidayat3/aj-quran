@@ -20,7 +20,7 @@ class Content extends Component {
       },
       selectedUrl: "",
       selectedSuratLoaded: false,
-      selectedSurat: this.props.location.pathname.split("/").reverse()[0],
+      selectedSurat: this.props.location.pathname.split("/")[2],
       arQori: "ar.alafasy",
       play: false
     };
@@ -41,7 +41,7 @@ class Content extends Component {
     ) {
       this.setState({
         selectedSuratLoaded: false,
-        selectedSurat: this.props.location.pathname.split("/").reverse()[0]
+        selectedSurat: this.props.location.pathname.split("/")[2]
       });
 
       await this.getSurat();
@@ -108,7 +108,11 @@ class Content extends Component {
               <div className="Content-body">
                 <ul className="ListBorder">
                   {this.state.selectedSuratAr.ayahs.map((ayat, index) => (
-                    <li className="ListItem" key={ayat.number}>
+                    <li
+                      className="ListItem"
+                      key={ayat.number}
+                      id={ayat.numberInSurah}
+                    >
                       <div className="Listitem-floating">
                         <span className="Listitem-number">
                           {ayat.numberInSurah}
@@ -131,7 +135,12 @@ class Content extends Component {
             </div>
           )}
         </div>
-        <Player onQoriChange={this.onQoriChange} defaultQori={this.state.arQori}/>
+        <Player
+          location={this.props.location}
+          onQoriChange={this.onQoriChange}
+          defaultQori={this.state.arQori}
+          selectedSuratAr={this.state.selectedSuratAr.ayahs}
+        />
       </div>
     );
   }

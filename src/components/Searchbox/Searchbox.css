@@ -1,11 +1,12 @@
 .Searchbox {
-  height: 70px;
-  min-height: 70px;
-  max-height: 70px;
+  height: 60px;
+  min-height: 60px;
+  max-height: 60px;
 
   padding: 0 1rem;
 
-  background: #273c75;
+  background: #f5f6fa;
+  border-bottom: 1px solid #dcdde1;
 
   display: flex;
   justify-items: center;
@@ -13,20 +14,37 @@
 }
 
 .Searchbox input {
-  padding: 0 20px;
+  padding: 0 16px;
 
   height: 30px;
   width: 100%;
 
   border: none;
-  border-radius: 30px;
-  box-shadow: inset 0 0 5px 1px #939397;
+  border-radius: 4px 0 0 4px;
+  box-shadow: inset 0 0 3px .5px #ddd;
 
-  font-size: .9rem;
+  font-family: "Open Sans";
+  font-size: .8rem;
+  color: #333;
 }
 .Searchbox input:focus {
   outline: none;
 }
 .Searchbox input::placeholder {
-  color: #939397;
+  color: #ccc;
+}
+.Searchbox button {
+  padding: 0 20px;
+
+  background: #dcdde1;
+
+  height: 30px;
+  min-width: fit-content;
+
+  border: none;
+  border-radius: 0 4px 4px 0;
+
+  color: #273c75;
+
+  cursor: pointer;
 }

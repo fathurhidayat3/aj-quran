@@ -8,8 +8,8 @@
 .Content-detail {
   padding: 1.2rem 2rem 0 2rem;
 
-  min-height: calc(100vh - 160px + .8rem);
-  max-height: calc(100vh - 160px + .8rem);
+  min-height: calc(100vh - 150px + .8rem);
+  max-height: calc(100vh - 150px + .8rem);
 
   overflow-y: auto;
 }
@@ -70,16 +70,16 @@
 .Listitem-number {
   padding: 4px 8px;
 
-  background: #4cd137;
+  background: #44bd32;
   border-radius: 4px 0 0 0;
 }
 
 .Listitem-play {
-  padding: 4px 8px;
+  padding: 4px 8px; 
 
-  background: #4cd137;
+  background: #44bd32;
   border-radius: 0 4px 4px 0;
-  border-left: 2px solid #44bd32;
+  border-left: 2px solid #369228;
 
   cursor: pointer;
 }

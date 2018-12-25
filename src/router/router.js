@@ -15,6 +15,7 @@ const ReactRouter = () => {
 
           <Switch>
             <Route exact path="/quran/:any" component={App} />
+            {/* <Route exact path="/quran/:any/:any" component={App} /> */}
             <Route exact path="/hafalan" component={Hafalan} />
             {/* <Route path="/pengaturan" component={Hafalan} /> */}
 

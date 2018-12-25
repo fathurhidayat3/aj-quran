@@ -8,12 +8,19 @@ class Player extends Component {
     super(props);
 
     this.state = {
-      qoris: []
+      qoris: [],
+      selectedAyat: 1
     };
   }
 
   async componentWillMount() {
     await this.getQori();
+  }
+
+  componentWillReceiveProps() {
+    this.setState({
+      selectedAyat: 1
+    });
   }
 
   async getQori() {
@@ -28,10 +35,23 @@ class Player extends Component {
       )
       .then(result => {
         this.setState({
+          selectedAyat: 1,
           qoris: result.data.data
         });
       });
   }
+
+  onAyatChange = e => {
+    document.getElementById(e.target.value).scrollIntoView({
+      behavior: "smooth"
+    });
+
+    // window.location.hash = `#${e.target.value}`;
+
+    this.setState({
+      selectedAyat: e.target.value
+    });
+  };
 
   onQoriChange(e) {
     this.props.onQoriChange(e.target.value);
@@ -43,6 +63,22 @@ class Player extends Component {
         {/* <button className="Input-circle-button">
           <i className="fa fa-play" />
         </button> */}
+
+        <div className="Input-form-group fit-content">
+          <label>Ke ayat : </label>
+          <select
+            name=""
+            id=""
+            value={this.state.selectedAyat}
+            onChange={e => this.onAyatChange(e)}
+          >
+            {this.props.selectedSuratAr.map((ayat, index) => (
+              <option value={ayat.numberInSurah} key={index}>
+                {ayat.numberInSurah}
+              </option>
+            ))}
+          </select>
+        </div>
 
         <div className="Input-form-group right">
           <label>Qori' : </label>

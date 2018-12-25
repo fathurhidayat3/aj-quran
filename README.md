@@ -49,6 +49,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Next Feature Implementation
 
-- Apply search functionality
+- Apply search functionality [done]
 - Full surah player
 - Add bookmark or favourite 
+- Add highlighted keyword on search result text

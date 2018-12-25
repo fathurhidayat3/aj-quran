@@ -40,8 +40,9 @@
 
 .Card-footer {
   font-family: Ubuntu;
-  font-size: 0.9rem;
-  color: #ccc;
+  font-size: 0.8rem;
+  color: #999;
+  line-height: 1rem;
 }
 
 .Card.active {
