@@ -20,7 +20,7 @@ class Content extends Component {
       },
       selectedUrl: "",
       selectedSuratLoaded: false,
-      selectedSurat: this.props.location.pathname.split("/")[2],
+      selectedSurat: this.props.number,
       arQori: "ar.alafasy",
       play: false
     };
@@ -41,7 +41,7 @@ class Content extends Component {
     ) {
       this.setState({
         selectedSuratLoaded: false,
-        selectedSurat: this.props.location.pathname.split("/")[2]
+        selectedSurat: this.props.number
       });
 
       await this.getSurat();

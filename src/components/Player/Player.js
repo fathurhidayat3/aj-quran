@@ -9,7 +9,9 @@ class Player extends Component {
 
     this.state = {
       qoris: [],
-      selectedAyat: 1
+      selectedAyat: window.location.hash.split("#")[1]
+        ? window.location.hash.split("#")[1]
+        : 1
     };
   }
 
@@ -19,7 +21,9 @@ class Player extends Component {
 
   componentWillReceiveProps() {
     this.setState({
-      selectedAyat: 1
+      selectedAyat: window.location.hash.split("#")[1]
+        ? window.location.hash.split("#")[1]
+        : 1
     });
   }
 
@@ -35,7 +39,9 @@ class Player extends Component {
       )
       .then(result => {
         this.setState({
-          selectedAyat: 1,
+          selectedAyat: window.location.hash.split("#")[1]
+            ? window.location.hash.split("#")[1]
+            : 1,
           qoris: result.data.data
         });
       });
@@ -46,7 +52,7 @@ class Player extends Component {
       behavior: "smooth"
     });
 
-    // window.location.hash = `#${e.target.value}`;
+    window.history.pushState(null, null, `#${e.target.value}`);
 
     this.setState({
       selectedAyat: e.target.value

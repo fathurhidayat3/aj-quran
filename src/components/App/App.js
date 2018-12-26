@@ -17,7 +17,7 @@ class App extends Component {
     this.state = {
       surats: [],
       suratsCopy: [],
-      selectedNumber: 1,
+      selectedNumber: this.props.location.pathname.split("/")[2],
       suratsLoaded: false,
       search: false
     };
