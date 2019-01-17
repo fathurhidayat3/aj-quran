@@ -54,7 +54,7 @@ class Content extends Component {
 
     await axios
       .get(
-        `https://api.alquran.cloud/surah/${
+        `${"https://cors-anywhere.herokuapp.com/"}https://api.alquran.cloud/surah/${
           this.state.selectedSurat
         }/editions/${editionId},${editionAr}`
       )

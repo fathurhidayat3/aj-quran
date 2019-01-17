@@ -29,7 +29,7 @@ class Player extends Component {
 
   async getQori() {
     await axios
-      .get(`https://api.alquran.cloud/edition?language=ar`)
+      .get(`${"https://cors-anywhere.herokuapp.com/"}https://api.alquran.cloud/edition?language=ar`)
       .then(result => {
         this.setState({
           selectedAyat: window.location.hash.split("#")[1]
