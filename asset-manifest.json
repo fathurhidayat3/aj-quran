@@ -1,13 +1,13 @@
 {
   "main.css": "/aj-quran/static/css/main.27be0ab6.chunk.css",
-  "main.js": "/aj-quran/static/js/main.dc3cb860.chunk.js",
-  "main.js.map": "/aj-quran/static/js/main.dc3cb860.chunk.js.map",
+  "main.js": "/aj-quran/static/js/main.21625aab.chunk.js",
+  "main.js.map": "/aj-quran/static/js/main.21625aab.chunk.js.map",
   "static/js/1.d34e87a3.chunk.js": "/aj-quran/static/js/1.d34e87a3.chunk.js",
   "static/js/1.d34e87a3.chunk.js.map": "/aj-quran/static/js/1.d34e87a3.chunk.js.map",
   "runtime~main.js": "/aj-quran/static/js/runtime~main.f3dd43e8.js",
   "runtime~main.js.map": "/aj-quran/static/js/runtime~main.f3dd43e8.js.map",
   "static/css/main.27be0ab6.chunk.css.map": "/aj-quran/static/css/main.27be0ab6.chunk.css.map",
   "index.html": "/aj-quran/index.html",
-  "precache-manifest.1a9a5308b22db879c9966c3b0e61d4be.js": "/aj-quran/precache-manifest.1a9a5308b22db879c9966c3b0e61d4be.js",
+  "precache-manifest.e26b7780e9458ba04562f71435104c85.js": "/aj-quran/precache-manifest.e26b7780e9458ba04562f71435104c85.js",
   "service-worker.js": "/aj-quran/service-worker.js"
 }

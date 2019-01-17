@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/aj-quran/precache-manifest.1a9a5308b22db879c9966c3b0e61d4be.js"
+  "/aj-quran/precache-manifest.e26b7780e9458ba04562f71435104c85.js"
 );
 
 workbox.clientsClaim();
