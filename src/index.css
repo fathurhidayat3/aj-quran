@@ -27,9 +27,7 @@ body {
 
 .sweet-loading {
   min-height: 100%;
-  height: fill-available;
-  height: -moz-available;
-  height: -webkit-fill-avaiable;
+  height: stretch;
 
   display: flex;
   flex-direction: column;

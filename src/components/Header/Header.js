@@ -28,8 +28,16 @@ class Header extends Component {
           Hafalan
         </NavLink> */}
 
+        <NavLink
+          to="/pengaturan"
+          className="nav-item right"
+          activeStyle={{ className: "active" }}
+        >
+          Bookmark
+        </NavLink>
+
         {/* <NavLink
-          to="/hafalan"
+          to="/pengaturan"
           className="nav-item right"
           activeStyle={{ className: "active" }}
         >

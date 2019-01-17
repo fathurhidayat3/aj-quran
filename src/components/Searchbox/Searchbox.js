@@ -28,7 +28,7 @@ class Searchbox extends Component {
           placeholder="Masukkan kata kunci"
           onChange={this.handleOnChange}
           onKeyPress={e =>
-            e.key == "Enter"
+            e.key === "Enter"
               ? this.props.onSearchSubmit(this.state.keyword)
               : null
           }

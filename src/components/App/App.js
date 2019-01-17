@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Route } from "react-router-dom";
 
 import "./App.css";
 
 import Card from "../Card/Card";
 import Searchbox from "../Searchbox/Searchbox";
 import Content from "../Content/Content";
-
 import Loader from "../Loader/Loader";
 
 class App extends Component {
@@ -17,7 +15,7 @@ class App extends Component {
     this.state = {
       surats: [],
       suratsCopy: [],
-      selectedNumber: this.props.location.pathname.split("/")[2],
+      selectedNumber: window.location.pathname.split("/")[2],
       suratsLoaded: false,
       search: false
     };
@@ -28,22 +26,13 @@ class App extends Component {
   }
 
   getSurats() {
-    axios
-      .get(
-        `${"https://cors-anywhere.herokuapp.com/"}http://api.alquran.cloud/surah`,
-        {
-          headers: {
-            "Access-Control-Allow-Origin": "*"
-          }
-        }
-      )
-      .then(result => {
-        this.setState({
-          surats: result.data.data,
-          suratsCopy: result.data.data,
-          suratsLoaded: true
-        });
+    axios.get(`http://api.alquran.cloud/surah`).then(result => {
+      this.setState({
+        surats: result.data.data,
+        suratsCopy: result.data.data,
+        suratsLoaded: true
       });
+    });
   }
 
   onCardClick = number => {
@@ -58,14 +47,7 @@ class App extends Component {
     });
 
     axios
-      .get(
-        `${"https://cors-anywhere.herokuapp.com/"}http://api.alquran.cloud/search/${keyword}/all/id.indonesian`,
-        {
-          headers: {
-            "Access-Control-Allow-Origin": "*"
-          }
-        }
-      )
+      .get(`http://api.alquran.cloud/search/${keyword}/all/id.indonesian`)
       .then(result => {
         if (typeof result.data.data != "undefined") {
           this.setState({
@@ -91,7 +73,7 @@ class App extends Component {
       suratsLoaded: true,
       search: false
     });
-  }
+  };
 
   render() {
     return (
@@ -106,7 +88,9 @@ class App extends Component {
               <div>
                 {this.state.search && (
                   <div className="App-search-header">
-                    <span>Hasil pencarian : <b>{this.state.surats.length}</b></span>
+                    <span>
+                      Hasil pencarian : <b>{this.state.surats.length}</b>
+                    </span>
                     <button onClick={this.resetSearch}>Reset pencarian</button>
                   </div>
                 )}

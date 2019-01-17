@@ -4,7 +4,6 @@ import axios from "axios";
 import "./Content.css";
 
 import Player from "../Player/Player";
-
 import Loader from "../Loader/Loader";
 
 class Content extends Component {
