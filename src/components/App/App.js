@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   getSurats() {
-    axios.get(`http://api.alquran.cloud/surah`).then(result => {
+    axios.get(`https://api.alquran.cloud/surah`).then(result => {
       this.setState({
         surats: result.data.data,
         suratsCopy: result.data.data,
@@ -47,7 +47,7 @@ class App extends Component {
     });
 
     axios
-      .get(`http://api.alquran.cloud/search/${keyword}/all/id.indonesian`)
+      .get(`https://api.alquran.cloud/search/${keyword}/all/id.indonesian`)
       .then(result => {
         if (typeof result.data.data != "undefined") {
           this.setState({

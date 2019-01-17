@@ -54,14 +54,9 @@ class Content extends Component {
 
     await axios
       .get(
-        `${"https://cors-anywhere.herokuapp.com/"}http://api.alquran.cloud/surah/${
+        `https://api.alquran.cloud/surah/${
           this.state.selectedSurat
-        }/editions/${editionId},${editionAr}`,
-        {
-          headers: {
-            "Access-Control-Allow-Origin": "*"
-          }
-        }
+        }/editions/${editionId},${editionAr}`
       )
       .then(result => {
         this.setState({
